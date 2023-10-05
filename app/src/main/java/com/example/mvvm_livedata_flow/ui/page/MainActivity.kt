@@ -7,8 +7,10 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.mvvm_livedata_flow.R
+import dagger.hilt.android.AndroidEntryPoint
 
 //Jetpack component -> Architecture (LiveData,MVVM,ROOM,NAVIGATION,WORKMANAGER,LIFECYCLE)
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var navHostFragment: NavHostFragment
     private lateinit var controllerNav : NavController
