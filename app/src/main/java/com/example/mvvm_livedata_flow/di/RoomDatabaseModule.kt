@@ -3,6 +3,7 @@ package com.example.mvvm_livedata_flow.di
 import android.app.Application
 import androidx.room.Room
 import com.example.mvvm_livedata_flow.app.MyApplication
+import com.example.mvvm_livedata_flow.data_source.local.dao.NoteDao
 import com.example.mvvm_livedata_flow.data_source.local.dao.UserDao
 import com.example.mvvm_livedata_flow.data_source.local.database.RoomDatabaseXuan
 import dagger.Module
@@ -17,7 +18,7 @@ import javax.inject.Singleton
 object RoomDatabaseModule {
     @Provides
     @Singleton
-    fun providerDatabase(application: Application): RoomDatabaseXuan{
+    fun providerDatabase(application: Application): RoomDatabaseXuan {
         val db: RoomDatabaseXuan = Room.databaseBuilder(
             application,
             RoomDatabaseXuan::class.java,
@@ -28,7 +29,13 @@ object RoomDatabaseModule {
 
     @Provides
     @Singleton
-    fun providerUserDao(db: Provider<RoomDatabaseXuan>) : UserDao {
+    fun providerUserDao(db: Provider<RoomDatabaseXuan>): UserDao {
         return db.get().userDao()
+    }
+
+    @Singleton
+    @Provides
+    fun providerNoteDao(db: Provider<RoomDatabaseXuan>): NoteDao {
+        return db.get().noteDao()
     }
 }

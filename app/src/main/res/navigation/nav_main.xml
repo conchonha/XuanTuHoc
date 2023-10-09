@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/fragmentLogin">
+    app:startDestination="@id/fragmentHome">
 
     <fragment
         android:id="@+id/fragmentLogin"
@@ -16,5 +16,10 @@
         android:name="com.example.mvvm_livedata_flow.ui.fragment.FragmentHome"
         android:label="FragmentHome"
         tools:layout="@layout/fragment_home"/>
+    <fragment
+        android:id="@+id/fragmentAddNote"
+        android:name="com.example.mvvm_livedata_flow.ui.fragment.FragmentAddNote"
+        android:label="FragmentAddNote"
+        tools:layout="@layout/fragment_add"/>
 
 </navigation>
